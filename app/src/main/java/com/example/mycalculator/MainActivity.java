@@ -16,6 +16,7 @@ import javax.script.ScriptException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn1, btn2, btn_clear, btn_plus, btn_equal;
+    Button btn3, btn4,btn5, btn6;
     TextView text_display;
 
     // This is to evaluate the math expression
@@ -35,12 +36,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_clear = (Button) findViewById(R.id.btn_clear);
         text_display = (TextView) findViewById(R.id.textview_input_display);
 
+        //buttons 3456
+        btn3 = (Button) findViewById(R.id.btn3);
+         btn4 = (Button) findViewById(R.id.btn4);
+         btn5 = (Button) findViewById(R.id.btn5);
+         btn6 = (Button) findViewById(R.id.btn6);
+
         setClickListeners();
     }
 
     private void setClickListeners() {
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+        btn4.setOnClickListener(this);
+        btn5.setOnClickListener(this);
+        btn6.setOnClickListener(this);
         btn_plus.setOnClickListener(this);
         btn_equal.setOnClickListener(this);
         btn_clear.setOnClickListener(this);
@@ -54,6 +65,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn2:
                 addNumber("2");
+                break;
+            case R.id.btn3:
+                addNumber("3");
+                break;
+            case R.id.btn4:
+                addNumber("4");
+                break;
+            case R.id.btn5:
+                addNumber("5");
+                break;
+            case R.id.btn6:
+                addNumber("6");
                 break;
             case R.id.btn_plus:
                 addNumber("+");
@@ -78,6 +101,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         BigDecimal decimal = new BigDecimal(result);
         return decimal.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString();
     }
+
+
 
     private void addNumber(String number) {
         text_display.setText(text_display.getText() + number);
