@@ -17,6 +17,8 @@ import javax.script.ScriptException;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn1, btn2, btn_clear, btn_plus, btn_equal;
     Button btn3, btn4,btn5, btn6;
+    Button btn7, btn8, btn9, btnMinus;
+
     TextView text_display;
 
     // This is to evaluate the math expression
@@ -38,9 +40,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //buttons 3456
         btn3 = (Button) findViewById(R.id.btn3);
-         btn4 = (Button) findViewById(R.id.btn4);
-         btn5 = (Button) findViewById(R.id.btn5);
-         btn6 = (Button) findViewById(R.id.btn6);
+        btn4 = (Button) findViewById(R.id.btn4);
+        btn5 = (Button) findViewById(R.id.btn5);
+        btn6 = (Button) findViewById(R.id.btn6);
+
+         //buttons 789-
+        btn7 = (Button) findViewById(R.id.button9);
+        btn8 = (Button) findViewById(R.id.button10);
+        btn9 = (Button) findViewById(R.id.button11);
+        btnMinus = (Button) findViewById(R.id.btn_minus);
 
         setClickListeners();
     }
@@ -52,6 +60,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn4.setOnClickListener(this);
         btn5.setOnClickListener(this);
         btn6.setOnClickListener(this);
+        btn7.setOnClickListener(this);
+        btn8.setOnClickListener(this);
+        btn9.setOnClickListener(this);
+        btnMinus.setOnClickListener(this);
         btn_plus.setOnClickListener(this);
         btn_equal.setOnClickListener(this);
         btn_clear.setOnClickListener(this);
@@ -77,6 +89,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn6:
                 addNumber("6");
+                break;
+            case R.id.button9:
+                addNumber("7");
+                break;
+            case R.id.button10:
+                addNumber("8");
+                break;
+            case R.id.button11:
+                addNumber("9");
+                break;
+            case R.id.btn_minus:
+                addNumber("-");
                 break;
             case R.id.btn_plus:
                 addNumber("+");
