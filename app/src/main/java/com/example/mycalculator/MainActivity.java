@@ -72,6 +72,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_mult:
+                addNumber(" x ");
+            case R.id.btn0:
+                addNumber("0");
             case R.id.btn1:
                 addNumber("1");
                 break;
@@ -100,10 +104,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 addNumber("9");
                 break;
             case R.id.btn_minus:
-                addNumber("-");
+                addNumber(" - ");
                 break;
             case R.id.btn_plus:
-                addNumber("+");
+                addNumber(" + ");
                 break;
             case R.id.btn_equal:
                 String result = null;
