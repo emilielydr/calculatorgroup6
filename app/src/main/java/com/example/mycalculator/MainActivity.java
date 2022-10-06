@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn1, btn2, btn_clear, btn_plus, btn_equal;
     Button btn3, btn4,btn5, btn6;
     Button btn7, btn8, btn9, btnMinus;
+    Button btn0, btnMulti;
+    Button btnDiv;
 
     TextView text_display;
 
@@ -50,10 +52,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn9 = (Button) findViewById(R.id.button11);
         btnMinus = (Button) findViewById(R.id.btn_minus);
 
+        btn0 = (Button) findViewById(R.id.btn0);
+        btnMulti = (Button) findViewById(R.id.btnMulti);
+        btnDiv = (Button) findViewById(R.id.btnDiv);
+
         setClickListeners();
     }
 
     private void setClickListeners() {
+        btn0.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
@@ -67,15 +74,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_plus.setOnClickListener(this);
         btn_equal.setOnClickListener(this);
         btn_clear.setOnClickListener(this);
+        btnMulti.setOnClickListener(this);
+        btnDiv.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_mult:
-                addNumber(" x ");
             case R.id.btn0:
                 addNumber("0");
+                break;
             case R.id.btn1:
                 addNumber("1");
                 break;
@@ -108,6 +116,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_plus:
                 addNumber(" + ");
+                break;
+            case R.id.btnDiv:
+                addNumber("/");
+                break;
+            case R.id.btnMulti:
+                addNumber(" * ");
                 break;
             case R.id.btn_equal:
                 String result = null;
