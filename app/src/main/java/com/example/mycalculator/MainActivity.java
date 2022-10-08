@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn7, btn8, btn9, btnMinus;
     Button btn0, btnMulti;
     Button btnDiv;
+    Button btn_dot;
 
     TextView text_display;
 
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn0 = (Button) findViewById(R.id.btn0);
         btnMulti = (Button) findViewById(R.id.btnMulti);
         btnDiv = (Button) findViewById(R.id.btnDiv);
+        btn_dot = (Button) findViewById(R.id.btn_dot);
 
         setClickListeners();
     }
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_clear.setOnClickListener(this);
         btnMulti.setOnClickListener(this);
         btnDiv.setOnClickListener(this);
+        btn_dot.setOnClickListener(this);
     }
 
     @Override
@@ -134,6 +137,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_clear:
                 clear_display();
+                break;
+            case R.id.btn_dot:
+                addNumber(".");
                 break;
         }
     }
