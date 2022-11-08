@@ -1,16 +1,14 @@
 package com.example.mycalculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.math.BigDecimal;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 
@@ -25,14 +23,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView text_display;
 
     // This is to evaluate the math expression
-    ScriptEngine engine;
+    //ScriptEngine engine;
+
+    //Reference to Evaluate class
+    Evaluate evaluate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        engine = new ScriptEngineManager().getEngineByName("rhino");
+        //engine = new ScriptEngineManager().getEngineByName("rhino");
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
@@ -145,8 +146,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private String evaluate(String expression) throws ScriptException {
-        String result = engine.eval(expression).toString();
-        BigDecimal decimal = new BigDecimal(result);
+       // String result = engine.eval(expression).toString();
+        //Round up decimal
+        //BigDecimal decimal = new BigDecimal(result);
+
+        BigDecimal decimal = evaluate.evaluate(expression);
         return decimal.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString();
     }
 
